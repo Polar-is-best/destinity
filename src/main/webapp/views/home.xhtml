@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:ui="jakarta.faces.facelets">
+
+    <ui:include src="/components/head.xhtml"/>
+    <h:body class="bg-gray-50 flex flex-col min-h-screen w-full">
+        <ui:include src="/components/header.xhtml"/>
+        
+        <!-- Contenido principal -->
+        <main class="p-8 max-w-[1400px] mx-auto w-full flex-1 flex flex-col">
+            
+            <!-- Panel de Analíticas Globales -->
+            <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8 no-select">
+                <div class="bg-white p-6 shadow-lg rounded-2xl text-center">
+                    <h2 class="text-lg font-semibold text-gray-700">📈 Ingresos Totales</h2>
+                    <p class="text-3xl font-bold text-green-600">$120,450</p>
+                </div>
+                <div class="bg-white p-6 shadow-lg rounded-2xl text-center">
+                    <h2 class="text-lg font-semibold text-gray-700">💳 Gastos Totales</h2>
+                    <p class="text-3xl font-bold text-red-500">$45,320</p>
+                </div>
+                <div class="bg-white p-6 shadow-lg rounded-2xl text-center">
+                    <h2 class="text-lg font-semibold text-gray-700">📦 Órdenes Completadas</h2>
+                    <p class="text-3xl font-bold text-blue-600">325</p>
+                </div>
+                <div class="bg-white p-6 shadow-lg rounded-2xl text-center">
+                    <h2 class="text-lg font-semibold text-gray-700">🆕 Clientes Nuevos</h2>
+                    <p class="text-3xl font-bold text-yellow-500">45</p>
+                </div>
+            </section>
+            
+            <!-- Sección de bienvenida -->
+            <section class="bg-white p-10 shadow rounded-lg text-center flex-1 flex items-center justify-center no-select">
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-800">Bienvenido a Destinity ERP</h2>
+                    <p class="text-gray-600 mt-4 text-lg">Gestione su negocio de manera eficiente con nuestras herramientas avanzadas.</p>
+                </div>
+            </section>
+        </main>
+
+        <ui:include src="/components/footer.xhtml"/>
+    </h:body>
+</html>
