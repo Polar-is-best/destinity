@@ -8,31 +8,62 @@
     <h:body class="bg-gray-50 flex flex-col min-h-screen w-full">
         <ui:include src="/components/header.xhtml"/>
         
-        <!-- Contenido principal -->
         <main class="p-8 max-w-[1400px] mx-auto w-full flex-1 flex flex-col">
             
             <!-- Panel de Analíticas Globales -->
-            <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8 no-select">
-                <div class="bg-white p-6 shadow-lg rounded-2xl text-center">
-                    <h2 class="text-lg font-semibold text-gray-700">📈 Ingresos Totales</h2>
+            <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-white p-6 shadow-lg rounded-2xl border-l-4 border-green-500">
+                    <div class="flex items-center justify-between mb-4">
+                        <i class="ph ph-trend-up text-3xl text-green-600"></i>
+                        <span class="text-sm text-gray-500">Últimos 30 días</span>
+                    </div>
+                    <h2 class="text-lg font-semibold text-gray-700">Ingresos Totales</h2>
                     <p class="text-3xl font-bold text-green-600">$120,450</p>
+                    <div class="flex items-center text-green-600 mt-2">
+                        <i class="ph ph-arrow-up mr-2"></i>
+                        <span class="text-sm">12.5% desde el mes anterior</span>
+                    </div>
                 </div>
-                <div class="bg-white p-6 shadow-lg rounded-2xl text-center">
-                    <h2 class="text-lg font-semibold text-gray-700">💳 Gastos Totales</h2>
+                <div class="bg-white p-6 shadow-lg rounded-2xl border-l-4 border-red-500">
+                    <div class="flex items-center justify-between mb-4">
+                        <i class="ph ph-trend-down text-3xl text-red-600"></i>
+                        <span class="text-sm text-gray-500">Últimos 30 días</span>
+                    </div>
+                    <h2 class="text-lg font-semibold text-gray-700">Gastos Totales</h2>
                     <p class="text-3xl font-bold text-red-500">$45,320</p>
+                    <div class="flex items-center text-red-600 mt-2">
+                        <i class="ph ph-arrow-down mr-2"></i>
+                        <span class="text-sm">5.2% desde el mes anterior</span>
+                    </div>
                 </div>
-                <div class="bg-white p-6 shadow-lg rounded-2xl text-center">
-                    <h2 class="text-lg font-semibold text-gray-700">📦 Órdenes Completadas</h2>
+                <div class="bg-white p-6 shadow-lg rounded-2xl border-l-4 border-blue-500">
+                    <div class="flex items-center justify-between mb-4">
+                        <i class="ph ph-package text-3xl text-blue-600"></i>
+                        <span class="text-sm text-gray-500">Este mes</span>
+                    </div>
+                    <h2 class="text-lg font-semibold text-gray-700">Órdenes Completadas</h2>
                     <p class="text-3xl font-bold text-blue-600">325</p>
+                    <div class="flex items-center text-blue-600 mt-2">
+                        <i class="ph ph-check-circle mr-2"></i>
+                        <span class="text-sm">+8% rendimiento</span>
+                    </div>
                 </div>
-                <div class="bg-white p-6 shadow-lg rounded-2xl text-center">
-                    <h2 class="text-lg font-semibold text-gray-700">🆕 Clientes Nuevos</h2>
+                <div class="bg-white p-6 shadow-lg rounded-2xl border-l-4 border-yellow-500">
+                    <div class="flex items-center justify-between mb-4">
+                        <i class="ph ph-users text-3xl text-yellow-600"></i>
+                        <span class="text-sm text-gray-500">Este mes</span>
+                    </div>
+                    <h2 class="text-lg font-semibold text-gray-700">Clientes Nuevos</h2>
                     <p class="text-3xl font-bold text-yellow-500">45</p>
+                    <div class="flex items-center text-yellow-600 mt-2">
+                        <i class="ph ph-user-plus mr-2"></i>
+                        <span class="text-sm">15% crecimiento</span>
+                    </div>
                 </div>
             </section>
             
             <!-- Sección de bienvenida -->
-            <section class="bg-white p-10 shadow rounded-lg text-center flex-1 flex items-center justify-center no-select">
+            <section class="bg-white mt-10 p-10 shadow rounded-lg text-center flex-1 flex items-center justify-center no-select">
                 <div>
                     <h2 class="text-4xl font-bold text-gray-800">Bienvenido a Destinity ERP</h2>
                     <p class="text-gray-600 mt-4 text-lg">Gestione su negocio de manera eficiente con nuestras herramientas avanzadas.</p>
