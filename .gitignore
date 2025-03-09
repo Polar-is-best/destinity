@@ -1,3 +1,6 @@
+# Variables de entorno
+config.properties
+
 # Archivos generados por NetBeans
 nbproject/private/
 nbbuild/
