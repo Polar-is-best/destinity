@@ -4,13 +4,15 @@
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:h="http://xmlns.jcp.org/jsf/html">
 
-    <header class="bg-gradient-to-r from-blue-800 to-blue-600 text-white p-4 shadow-md w-full">
+    <header class="bg-gradient-to-r from-blue-800 to-blue-600 text-white p-4 shadow-md w-full fixed top-0 left-0 z-30">
         <div class="max-w-[1400px] mx-auto flex justify-between items-center">
             
-            <!-- Navegacion -->
+            <!-- Logo -->
             <h1 class="text-2xl font-bold">
                 <h:link outcome="/views/home" value="Destinity - ERP"/>
             </h1>
+            
+            <!-- Navegación para pantallas medianas y grandes -->
             <nav class="hidden md:flex space-x-4">
                 <h:link outcome="/views/home" value="Inicio" styleClass="px-4 py-2 rounded-xl hover:bg-white hover:text-blue-800 transition"/>
                 <h:link outcome="/views/analytics" value="Analíticas" styleClass="px-4 py-2 rounded-xl hover:bg-white hover:text-blue-800 transition"/>
@@ -21,25 +23,51 @@
                 <h:link outcome="/views/human_resources" value="Recursos Humanos" styleClass="px-4 py-2 rounded-xl hover:bg-white hover:text-blue-800 transition"/>
             </nav>
 
-            <!-- Botón de Perfil -->
-            <div class="relative">
-                <button id="profile-button" aria-expanded="false">
-                    <img src="https://png.pngtree.com/png-clipart/20230811/original/pngtree-male-account-profile-worker-vector-picture-image_10398976.png" class="w-8 h-8 rounded-full border-2 border-gray-300" alt="Perfil"/>
+            <div class="flex items-center space-x-4">
+                <!-- Botón de menú para móviles -->
+                <button id="mobile-menu-button" class="md:hidden focus:outline-none" aria-label="Menú">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
                 </button>
 
-                <!-- Menú de Usuario -->
-                <div id="profile-menu" role="menu" 
-                     class="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg p-4 text-gray-800 z-50 transition-all opacity-0 transform scale-95 pointer-events-none">
-                    <p class="font-semibold px-3">Usuario: Admin</p>
-                    <p class="text-sm text-gray-600 px-3">admin@destinity.com</p>
-                    <hr class="my-2"/>
-                    <button class="w-full text-left py-2 px-3 hover:bg-gray-100 rounded-lg">⚙️ Configuración</button>
-                    <button class="w-full text-left py-2 px-3 hover:bg-gray-100 rounded-lg">📞 Soporte</button>
-                    <button class="text-red-600 font-semibold w-full text-left py-2 px-3 hover:bg-gray-100 rounded-lg">🚪 Cerrar sesión</button>
+                <!-- Botón de Perfil -->
+                <div class="relative">
+                    <button id="profile-button" aria-expanded="false">
+                        <img src="https://png.pngtree.com/png-clipart/20230811/original/pngtree-male-account-profile-worker-vector-picture-image_10398976.png" class="w-8 h-8 rounded-full border-2 border-gray-300" alt="Perfil"/>
+                    </button>
+
+                    <!-- Menú de Usuario -->
+                    <div id="profile-menu" role="menu" 
+                         class="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg p-4 text-gray-800 z-50 transition-all opacity-0 transform scale-95 pointer-events-none">
+                        <p class="font-semibold px-3">Usuario: Admin</p>
+                        <p class="text-sm text-gray-600 px-3">admin@destinity.com</p>
+                        <hr class="my-2"/>
+                        <button class="w-full text-left py-2 px-3 hover:bg-gray-100 rounded-lg">⚙️ Configuración</button>
+                        <button class="w-full text-left py-2 px-3 hover:bg-gray-100 rounded-lg">📞 Soporte</button>
+                        <button class="text-red-600 font-semibold w-full text-left py-2 px-3 hover:bg-gray-100 rounded-lg">🚪 Cerrar sesión</button>
+                    </div>
                 </div>
             </div>
         </div>
+        
+        <!-- Menú móvil - Se sobrepone al contenido cuando es visible -->
+        <div id="mobile-menu" class="hidden fixed left-0 right-0 bg-blue-800 bg-opacity-95 shadow-xl z-40 md:hidden">
+            <nav class="flex flex-col space-y-2 p-4 max-w-[1400px] mx-auto">
+                <h:link outcome="/views/home" value="Inicio" styleClass="px-4 py-3 rounded-xl hover:bg-white hover:text-blue-800 transition"/>
+                <h:link outcome="/views/analytics" value="Analíticas" styleClass="px-4 py-3 rounded-xl hover:bg-white hover:text-blue-800 transition"/>
+                <h:link outcome="/views/inventory" value="Inventario" styleClass="px-4 py-3 rounded-xl hover:bg-white hover:text-blue-800 transition"/>
+                <h:link outcome="/views/purchasing" value="Compras" styleClass="px-4 py-3 rounded-xl hover:bg-white hover:text-blue-800 transition"/>
+                <h:link outcome="/views/sales" value="Ventas" styleClass="px-4 py-3 rounded-xl hover:bg-white hover:text-blue-800 transition"/>
+                <h:link outcome="/views/finance" value="Finanzas" styleClass="px-4 py-3 rounded-xl hover:bg-white hover:text-blue-800 transition"/>
+                <h:link outcome="/views/human_resources" value="Recursos Humanos" styleClass="px-4 py-3 rounded-xl hover:bg-white hover:text-blue-800 transition"/>
+            </nav>
+        </div>
     </header>
     
+    <!-- Espaciador para compensar el header fijo -->
+    <div class="h-16"></div>
+    
     <h:outputScript library="js" name="profile_header.js"/>
+    <h:outputScript library="js" name="mobile_menu.js"/>
 </ui:composition>
