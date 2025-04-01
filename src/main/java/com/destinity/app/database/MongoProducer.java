@@ -25,7 +25,14 @@ public class MongoProducer {
     public MongoCollection<Document> produceUserCollection() {
         return database.getCollection("users");
     }
-    
+
+    @Produces
+    @SalesCollection
+    public MongoCollection<Document> produceSalesCollection() {
+        return database.getCollection("sales");
+    }
+
+
     @PreDestroy
     public void closeMongoConnection() {
         if (mongoClient != null) {

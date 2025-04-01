@@ -19,8 +19,8 @@ public class UserRepository{
     }
     
     @Inject
-    public void setColletion(MongoCollection<Document> userCollection) {
-        this.collection = userCollection;
+    public void setColletion(MongoCollection<Document> usersCollection) {
+        this.collection = usersCollection;
     }
     
     public void save(User user) {
